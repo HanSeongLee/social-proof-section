@@ -1,0 +1,22 @@
+
+.rateCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #F7F2F7;
+  border-radius: 8px;
+  padding: 16px;
+
+  .iconContainer {
+    display: flex;
+    grid-gap: 8.45px;
+    margin-bottom: 16.23px;
+  }
+
+  .description {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    color: #512051;
+  }
+}
