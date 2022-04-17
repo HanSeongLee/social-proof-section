@@ -9,6 +9,7 @@
   @include media(">desktop") {
     text-align: left;
     height: 100vh;
+    min-height: 800px;
   }
 
   &::before {
