@@ -1,3 +1,4 @@
+@import "styles/utils";
 
 .rateCard {
   display: flex;
@@ -7,10 +8,23 @@
   border-radius: 8px;
   padding: 16px;
 
+  @include media(">desktop") {
+    max-width: 445px;
+    min-height: 56px;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: 32px;
+    padding: 0 32px;
+  }
+
   .iconContainer {
     display: flex;
     grid-gap: 8.45px;
     margin-bottom: 16.23px;
+
+    @include media(">desktop") {
+      margin-bottom: 0;
+    }
   }
 
   .description {
