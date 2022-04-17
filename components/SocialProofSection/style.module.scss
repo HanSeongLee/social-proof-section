@@ -1,9 +1,15 @@
+@import "styles/utils";
 
 .socialProofSection {
   position: relative;
   text-align: center;
   padding: 80px 0 99px;
   overflow: hidden;
+
+  @include media(">desktop") {
+    text-align: left;
+    height: 100vh;
+  }
 
   &::before {
     position: absolute;
@@ -14,6 +20,10 @@
     content: "";
     background: url("/img/bg-pattern-top-mobile.svg") no-repeat;
     background-size: contain;
+
+    @include media(">desktop") {
+      background: url("/img/bg-pattern-top-desktop.svg") no-repeat;
+    }
   }
 
   &::after {
@@ -25,41 +35,110 @@
     content: "";
     background: url("/img/bg-pattern-bottom-mobile.svg") no-repeat;
     background-size: cover;
+
+    @include media(">desktop") {
+      width: 1085px;
+      height: 673px;
+      left: initial;
+      right: 0;
+      background: url("/img/bg-pattern-bottom-desktop.svg") no-repeat;
+      background-size: cover;
+    }
   }
 
   .container {
     position: relative;
     z-index: 1;
+
+    @include media(">desktop") {
+      display: grid;
+      grid-template-areas: "content rateCardContainer"
+                          "testimonialCardContainer testimonialCardContainer";
+      grid-gap: 72px;
+    }
   }
 
-  .title {
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 32px;
-    letter-spacing: -1.14px;
-    color: #512051;
-    margin-bottom: 18px;
-  }
+  .content {
+    grid-area: content;
 
-  .description {
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 25px;
-    letter-spacing: -0.5px;
-    color: #927B91;
-    margin-bottom: 40px;
+    .title {
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 32px;
+      letter-spacing: -1.14px;
+      color: #512051;
+      margin-bottom: 18px;
+
+      @include media(">desktop") {
+        max-width: 445px;
+        font-size: 48px;
+        line-height: 48px;
+        letter-spacing: -1.7px;
+        color: #512051;
+      }
+    }
+
+    .description {
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 25px;
+      letter-spacing: -0.5px;
+      color: #927B91;
+      margin-bottom: 40px;
+
+      @include media(">desktop") {
+        max-width: 445px;
+        font-size: 15px;
+        line-height: 25px;
+        color: #927B91;
+        margin-bottom: 0;
+      }
+    }
   }
 
   .rateCardContainer {
+    grid-area: rateCardContainer;
     display: flex;
     flex-direction: column;
     grid-gap: 16px;
     margin-bottom: 49px;
+
+    @include media(">desktop") {
+      justify-content: center;
+      margin-bottom: 0;
+
+      > div {
+        &:nth-child(2) {
+          margin-left: 49px;
+        }
+
+        &:nth-child(3) {
+          margin-left: 95px;
+        }
+      }
+    }
   }
 
   .testimonialCardContainer {
+    grid-area: testimonialCardContainer;
     display: flex;
     flex-direction: column;
     grid-gap: 16px;
+
+    @include media(">desktop") {
+      flex-direction: row;
+      align-items: flex-start;
+      grid-gap: 32px;
+
+      > div {
+        &:nth-child(2) {
+          margin-top: 16px;
+        }
+
+        &:nth-child(3) {
+          margin-top: 32px;
+        }
+      }
+    }
   }
 }
