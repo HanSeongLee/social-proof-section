@@ -10,6 +10,9 @@
     text-align: left;
     height: 100vh;
     min-height: 800px;
+    display: flex;
+    align-items: center;
+    padding: 127px 0 100px;
   }
 
   &::before {
