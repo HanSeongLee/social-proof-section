@@ -1,0 +1,42 @@
+
+.testimonialCard {
+  text-align: left;
+  background: #512051;
+  border-radius: 8px;
+  padding: 40px 32px 32px;
+
+  .header {
+    display: flex;
+    grid-gap: 23px;
+    margin-bottom: 26px;
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .name {
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 15px;
+      color: #FFFFFF;
+      margin-bottom: 5px;
+    }
+
+    .verifiedBuyer {
+      font-size: 13px;
+      line-height: 15px;
+      color: #EE69A4;
+    }
+  }
+
+  .description {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 22px;
+    letter-spacing: -0.23px;
+    color: #FFFFFF;
+  }
+}
